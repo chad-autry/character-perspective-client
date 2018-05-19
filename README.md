@@ -1,7 +1,7 @@
 # character-perspective-client
 Grid based game client which only shows things the character can see
 
-## Intedned Features
+## Intended Features
 * Websockets so the server can push data
 * Dumb client displays only what its given by the server \(no cheating possible\)
 * Dumb grid displays composite Font awesome icons \(using another of my frameworks \+ text sent from server\)
