@@ -1,0 +1,61 @@
+{
+  "name": "character-perspective-client",
+  "version": "1.0.0",
+  "description": "dumb terminal web based roguelike client components",
+  "scripts": {
+    "build": "mkdirp ./target/webapp && npm run less && npm run copy:HTML && npm run copy:auth && npm run copy:jquery&& webpack --config ./webpack-prod.config.js",
+    "eslint:fix": "eslint --fix './src/**/*.js' './src/**/*.jsx'",
+    "clean": "rimraf ./target",
+    "copy:auth": "copyfiles -f ./gh-pages/src/googleStaticAuth.html ./target/webapp",
+    "copy:HTML": "copyfiles -f ./gh-pages/src/index.html ./target/webapp",
+    "copy:jquery": "copyfiles -f ./node_modules/jquery/dist/jquery.min.js ./target/webapp",
+    "less": "lessc ./gh-pages/src/less/main.less > ./target/webapp/styles.css",
+    "start": "webpack-dev-server  --config ./webpack-prod.config.js --mode development --content-base ./target/webapp --port 8080",
+    "precommit": "lint-staged"
+  },
+  "keywords": [
+    "react",
+    "roguelike"
+  ],
+  "author": {
+    "name": "Chad Autry",
+    "email": "chad.autry@gmail.com",
+    "url": "http://chad-autry.github.io/"
+  },
+  "dependencies": {
+    "bootstrap": "^3.4.1",
+    "client-auth-jwt": "^0.4.0",
+    "prop-types": "^15.5.10",
+    "react-loading-overlay": "^1.0.1",
+    "react-markdown": "^4.1.0",
+    "react-router-dom": "^4.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "@babel/preset-react": "^7.0.0",
+    "babel-cli": "^6.18.0",
+    "babel-loader": "^8.0.5",
+    "copyfiles": "^0.2.1",
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^2.3.0",
+    "eslint-plugin-prettier": "^2.1.2",
+    "eslint-plugin-react": "^7.2.0",
+    "less": "^3.9.0",
+    "lint-staged": "^8.1.6",
+    "mkdirp": "^0.5.1",
+    "prettier": "^1.5.3",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "rimraf": "^2.4.4",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.2",
+    "webpack-dev-server": "^3.3.1"
+  },
+  "lint-staged": {
+    "*.js, *.jsx": [
+      "eslint",
+      "git add"
+    ]
+  }
+}
