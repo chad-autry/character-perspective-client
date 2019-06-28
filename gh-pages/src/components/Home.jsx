@@ -1,5 +1,6 @@
 import React from "react";
 import ReactMarkdown from "react-markdown";
+import Grid from "../../../src/Grid.jsx"
 
 const source = `
 # character-perspective-client
@@ -39,8 +40,10 @@ Grid based game client which only shows things the character can see
 const Home = class Home extends React.Component {
   render() {
     return (
-          <ReactMarkdown
-            source={source}
+          <Grid
+            mapData={this.props.mapData}
+            gridWidth={22}
+            gridHeight={22}
           />
     );
   }

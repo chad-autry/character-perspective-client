@@ -7,7 +7,9 @@ import Login from "./Login.jsx";
 import UserManagement from "./UserManagement.jsx";
 import Home from "./Home.jsx";
 import Policy from "./Policy.jsx";
+import MapData from "./MapData.js";
 
+let mapData = new MapData(22,22);
 const AppRoot = class AppRoot extends React.Component {
   constructor(props) {
     super(props);
@@ -53,7 +55,11 @@ const AppRoot = class AppRoot extends React.Component {
           location={this.props.location}
         />
         <Switch>
-          <Route path="/home" component={Home} />
+          <Route path="/home" 
+          render={routeProps => (
+              <Home mapData={mapData} />
+            )}
+          />
           <Route
             path="/login"
             render={routeProps => (

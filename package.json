@@ -4,7 +4,7 @@
   "description": "dumb terminal web based roguelike client components",
   "scripts": {
     "build": "mkdirp ./target/webapp && npm run less && npm run copy:HTML && npm run copy:auth && npm run copy:jquery&& webpack --config ./webpack-prod.config.js",
-    "eslint:fix": "eslint --fix './src/**/*.js' './src/**/*.jsx'",
+    "eslint:fix": "eslint --fix './src/**/*.jsx'",
     "clean": "rimraf ./target",
     "copy:auth": "copyfiles -f ./gh-pages/src/googleStaticAuth.html ./target/webapp",
     "copy:HTML": "copyfiles -f ./gh-pages/src/index.html ./target/webapp",
@@ -26,6 +26,8 @@
     "bootstrap": "^3.4.1",
     "client-auth-jwt": "^0.4.0",
     "prop-types": "^15.5.10",
+    "react-awesome-svg": "0.0.1",
+    "react-jsx-parser": "^1.18.0",
     "react-loading-overlay": "^1.0.1",
     "react-markdown": "^4.1.0",
     "react-router-dom": "^4.0.0"
