@@ -14,7 +14,7 @@ module.exports = function MapData(rows, columns) {
             if (Math.floor(rows/2) === i && Math.floor(columns/2) === j) {
                 this.cells[i][j] = "";
             } else if (Math.random() < .1) {
-                this.cells[i][j] = `<Icon href="./sprites.svg#tree" />`;
+                this.cells[i][j] = '<Icon href="sprites.svg#tree" />';
             } else {
                 this.cells[i][j] = "";
             }
@@ -73,7 +73,7 @@ module.exports = function MapData(rows, columns) {
        }
 
        if (mappedRow === this.atRow && mappedColumn === this.atColumn) {
-           return `<Icon href="./sprites.svg#at" />`;
+           return '<Icon href="sprites.svg#at" />';
        } else {
            return this.cells[mappedRow][mappedColumn] + faFlip;
        }

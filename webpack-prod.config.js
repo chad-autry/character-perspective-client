@@ -8,16 +8,6 @@ const common = {
   }
 }
 
-//Note: Exclude my own external modules from the node_modules exclusion which I know need compilation
-var prodLoaders = [
-  // javascript/jsx loader - https://www.npmjs.com/package/babel-loader - without the react-hot loader
-  {
-    test: /\.jsx?$/,
-    exclude: /node_modules(?!\/react-awesome-svg)/,
-    loaders: ['babel-loader']
-  },
-]
-
 module.exports = {
   entry: [
   // our entry file
@@ -33,8 +23,13 @@ module.exports = {
     rules: [
       {
         test: /\.(js|jsx)$/,
-        exclude: /node_modules(?!\/client-auth-jwt)/,
-        use: ['babel-loader']
+        exclude: /node_modules(?!\/react-awesome-svg)/,
+              use: {
+        loader: 'babel-loader',
+        options: {
+          presets: ['@babel/preset-env','@babel/preset-react']
+        }
+      }
       }
     ]
   },

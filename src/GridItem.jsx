@@ -1,6 +1,5 @@
 import React from "react";
-/*Importing Icon here, expect it to be push in the string */
-import Icon from "../node_modules/react-awesome-svg/src/Icon.jsx"; // eslint-disable-line no-unused-vars
+import Icon from "react-awesome-svg/src/Icon.jsx";
 import JsxParser from "react-jsx-parser";
 
 const GridItem = class GridItem extends React.Component {
@@ -8,7 +7,7 @@ const GridItem = class GridItem extends React.Component {
     super(props);
   }
   render() {
-    return <JsxParser jsx={this.props.icon} />;
+    return <JsxParser components={{Icon}} jsx={this.props.icon} />;
   }
 };
 
