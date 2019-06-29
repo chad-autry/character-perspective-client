@@ -1,9 +1,10 @@
+### Status
+[![Build Status](https://travis-ci.org/chad-autry/character-perspective-client.svg?branch=master)](https://travis-ci.org/chad-autry/character-perspective-client)
+
 # character-perspective-client
-Grid based game client which only shows things the character can see
+Grid based game client components which only shows things the character can see
 
 ## Intended Features
-* Websockets so the server can push data
-* Dumb client displays only what its given by the server \(no cheating possible\)
 * Dumb grid displays composite Font awesome icons \(using another of my frameworks \+ text sent from server\)
    * All vision logic would be server side
    * Positions sent relative to grid \(again no cheating\)
@@ -17,11 +18,11 @@ Grid based game client which only shows things the character can see
    * Eg: Search might be available, once searched 'open secret door' might become available through context \(plus the space's icon could change\)
 * Modal grid panels
    * For inventory, or maybe even different views \(like through a window\)
-* Mock server
-   * Just a simple client side mock to demonstrate things
 * Timer Icons
    * This is to support some of my own game mechanic ideas, but allow timers to be shown on attached to grid elements or globally near the buttons/status bars
-
+* gh-pages
+   * Includes a mock client and server to show how components might be used
+   
 ## Eventual Features
 * Plugin Windows
    * Figure out how to allow client extensions the server can pop up \(like character screens, dialog windows, special 
