@@ -57,7 +57,7 @@ const AppRoot = class AppRoot extends React.Component {
         <Switch>
           <Route path="/home" 
           render={routeProps => (
-              <Home mapData={mapData} />
+              <Home mapData={mapData.getGridData()} />
             )}
           />
           <Route

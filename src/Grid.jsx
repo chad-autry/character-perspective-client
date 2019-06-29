@@ -20,7 +20,7 @@ const Grid = class Grid extends React.Component {
               border: "1px solid black",
               textAlign: "center"
             }}>
-            <GridItem icon={this.props.mapData.getEntity(i, j)} />
+            <GridItem icon={this.props.gridData[i][j].iconString} />
           </td>
         );
       }

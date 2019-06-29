@@ -41,7 +41,7 @@ const Home = class Home extends React.Component {
   render() {
     return (
           <Grid
-            mapData={this.props.mapData}
+            gridData={this.props.mapData}
             gridWidth={22}
             gridHeight={22}
           />

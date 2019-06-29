@@ -26,6 +26,17 @@ module.exports = function MapData(rows, columns) {
        this.flipped = false;
    };
 
+   this.getGridData = function() {
+    let gridData = [];
+    for (let i = 0; i < this.rows; i++) {
+        gridData[i] = [];
+        for (let j = 0; j < this.columns; j++) {
+            gridData[i][j] = {iconString: this.getEntity(i, j)};
+        }
+      }
+      return gridData;
+   }
+
    this.getEntity = function(row, column) {
        let mappedRow = row;
        let mappedColumn = column;
